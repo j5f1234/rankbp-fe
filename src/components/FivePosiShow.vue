@@ -1,7 +1,11 @@
+<!-- 英雄池展示组件 -->
+
 <script setup lang="ts">
+import {  useGetHerosPoolwithImg } from '@/composable/useHerosPool';
 const positions=["top","jug","mid","adc","sup"]
-const bestheros=[["啊","1"],["啊","2"],["啊","3"],["啊","4"],["啊","5"]]
-const goodheros=[["吧","1"],["吧","2"],["吧","3"],["吧","4"],["吧","5"]]
+
+const {bestheros,goodheros,bestimgs,goodimgs}=useGetHerosPoolwithImg()
+console.log(bestimgs.value)
 </script>
 
 <template>
@@ -11,13 +15,13 @@ const goodheros=[["吧","1"],["吧","2"],["吧","3"],["吧","4"],["吧","5"]]
       <div v-for="position,i in positions" class="position">
         <div class="posi-title">{{ position }}</div>
         <div class="best-title">高熟练度：</div>
-        <div v-for="besthero in bestheros[i]" class="best-box">
-          <div class="best-img"></div>
+        <div v-for="besthero,j in bestheros[i]" class="best-box">
+          <img class="best-img" :src="bestimgs[i][j]">
           <div class="best-text"> {{ besthero }}</div>
         </div>
         <div class="good-title">低熟练度：</div>
-        <div v-for="goodhero in goodheros[i]" class="best-box">
-          <div class="best-img"></div>
+        <div v-for="goodhero,j in goodheros[i]" class="best-box">
+          <img class="best-img" :src="goodimgs[i][j]">
           <div class="best-text"> {{ goodhero }}</div>
         </div>
       </div>      

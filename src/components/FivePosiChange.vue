@@ -1,3 +1,5 @@
+<!-- 分路选择组件 -->
+
 <script setup lang="ts">
 import {ref,provide} from 'vue'
 import SelectForm from './SelectForm.vue'
@@ -74,7 +76,7 @@ provide('degree', degree)
   display: flex;
   flex-direction: column;
   width: 350px;
-  height: fit-content;
+  height: fit-content;margin-top: 60px;
   border: 2px solid #dcdfe6;
 }
 

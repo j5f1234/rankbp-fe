@@ -1,10 +1,15 @@
+<!-- 英雄池展示界面 -->
+
 <script setup lang="ts">
 import router from "@/router";
 import FivePosiShow from "../components/FivePosiShow.vue"
+import { useHerosBaseData } from "../composable/useHerosData"
 
 function moveToChange() {
   router.push("/change");
 }
+
+useHerosBaseData()
 </script>
 
 <template>
@@ -12,7 +17,6 @@ function moveToChange() {
     <el-button @click="moveToChange()" type="primary" class="change-button">修改</el-button>
   </div>
   <FivePosiShow></FivePosiShow>
-
 </template>
 
 <style scoped>

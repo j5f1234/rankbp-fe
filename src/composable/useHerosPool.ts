@@ -1,7 +1,7 @@
 import { getHerospool, postHerospool } from "@/api/herospool";
 import { ElMessage } from "element-plus";
 import { onMounted, ref } from "vue";
-import herosdata from "@/data/herosdata.json"
+import herosdata from "../../public/herosdata.json"
 
 // const checkedheros=ref([[[],[],[],[],[]],[[],[],[],[],[]]])
 // 发送修改好的英雄池表单到后端

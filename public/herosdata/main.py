@@ -35,7 +35,7 @@ def main():
         herosdata={"championMetaList":data["props"]["pageProps"]["championMetaList"]}
 
         # print(type(herosdata))
-        with open("./src/data/herosdata.json","w+",encoding='utf-8') as savefile:
+        with open("./public/herosdata.json","w+",encoding='utf-8') as savefile:
             json.dump(herosdata,savefile, indent=2, sort_keys=True, ensure_ascii=False)
 
     else:

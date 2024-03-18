@@ -1,5 +1,5 @@
 // 将爬取到的英雄数据发到后端
-import herosdata from "@/data/herosdata.json"
+import herosdata from "../../public/herosdata.json"
 import { postHerosBaseData } from "@/api/herosdata";
 import { ElMessage } from "element-plus";
 import { onMounted, ref } from "vue";

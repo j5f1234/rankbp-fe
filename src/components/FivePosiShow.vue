@@ -5,7 +5,6 @@ import {  useGetHerosPoolwithImg } from '@/composable/useHerosPool';
 const positions=["top","jug","mid","adc","sup"]
 
 const {bestheros,goodheros,bestimgs,goodimgs}=useGetHerosPoolwithImg()
-console.log(bestimgs.value)
 </script>
 
 <template>

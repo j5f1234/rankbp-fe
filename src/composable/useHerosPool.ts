@@ -102,6 +102,10 @@ export function useGetHerosPoolwithImg() {
             if(heroslist[i].name == bestheros.value[j][k]) {
               bestimgs.value[j].push(heroslist[i].image_url)
             }
+          }
+        }
+        for (let k=0;k<goodheros.value[j].length;++k){
+          for (let i=0;i<heroslist.length;++i){
             if(heroslist[i].name == goodheros.value[j][k]) {
               goodimgs.value[j].push(heroslist[i].image_url)
             }

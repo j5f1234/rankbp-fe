@@ -99,14 +99,14 @@ export function useGetHerosPoolwithImg() {
       for (let j=0;j<5;++j){
         for (let k=0;k<bestheros.value[j].length;++k){
           for (let i=0;i<heroslist.length;++i){
-            if(heroslist[i].name == bestheros.value[j][k]) {
+            if(heroslist[i].key == bestheros.value[j][k]) {
               bestimgs.value[j].push(heroslist[i].image_url)
             }
           }
         }
         for (let k=0;k<goodheros.value[j].length;++k){
           for (let i=0;i<heroslist.length;++i){
-            if(heroslist[i].name == goodheros.value[j][k]) {
+            if(heroslist[i].key == goodheros.value[j][k]) {
               goodimgs.value[j].push(heroslist[i].image_url)
             }
           }

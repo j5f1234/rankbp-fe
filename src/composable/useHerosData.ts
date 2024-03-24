@@ -17,7 +17,7 @@ export function useHerosBaseData() {
     }
     datalist[i]={
       "heroId":hero.id,
-      "name":hero.name,
+      "name":hero.key,
       "position1":position[0],
       "position2":position[1],
     }
@@ -48,13 +48,13 @@ export function useHerosName() {
     try {
       for (let i = 0; i<heroslist.length;++i){
         const hero = heroslist[i];
-        namelist.value[0][i]=hero.name;
+        namelist.value[0][i]=hero.key;
         imagelist.value[0][i]=hero.image_url;
         const positions=["TOP","JUNGLE","MID","ADC","SUPPORT"];
         for (let j=0;j<hero.positions.length;++j){
           for (let k=0;k<5;++k){
             if (hero.positions[j].name == positions[k]) {
-              namelist.value[1+k].push(hero.name)
+              namelist.value[1+k].push(hero.key)
               imagelist.value[1+k].push(hero.image_url);
               break
             }

@@ -60,9 +60,6 @@ provide('degree', degree)
 
 
 <style scoped>
-.abs{
-  width: 1000px;
-}
 
 .changepart {
   width: fit-content;
@@ -76,7 +73,8 @@ provide('degree', degree)
   display: flex;
   flex-direction: column;
   width: 350px;
-  height: fit-content;margin-top: 60px;
+  height: fit-content;
+  margin-top: 60px;
   border: 2px solid #dcdfe6;
 }
 

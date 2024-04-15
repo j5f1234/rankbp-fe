@@ -1,6 +1,6 @@
 <!-- 英雄池选择表单 -->
 <script setup lang="ts">
-import {ref,inject, watch} from 'vue'
+import {ref,inject, watch, type Ref} from 'vue'
 import { useGetHerosPool, useHerosPool } from '@/composable/useHerosPool';
 import { useHerosName } from '@/composable/useHerosData';
 
@@ -9,15 +9,14 @@ const positions=["all","top","jug","mid","adc","sup"];
 const {namelist,imagelist}=useHerosName()
 // console.log(namelist.value)
 const pageact=ref(0)
-const posichoose=inject('posichoose')
+const posichoose:Ref=inject('posichoose') as Ref
 
 const {bestheros,goodheros,checkedheros} = useGetHerosPool()
 // const checkedheros=ref([[[],[],[],[],[]],[[],[],[],[],[]]])
-const degree=inject('degree')
-const ischecked = ref(true);
+const degree:Ref=inject('degree') as Ref
 const isShow=ref([0,0,0,0,0,0])
 
-function changePage(i) {
+function changePage(i:number) {
   pageact.value=i
   isShow.value=[0,0,0,0,0,0]
   isShow.value[i]=1
@@ -43,8 +42,8 @@ function changePage(i) {
       <div v-for="hero,j in namelist[pageact]" class="select-box">
         <img class="img-box" :src="imagelist[pageact][j]">
         <input type="checkbox" v-model="checkedheros[degree][posichoose]" 
-        :id="j" :value="hero" >
-        <label :for="j">{{ hero }}</label>
+        :id="hero" :value="hero" >
+        <label :for="hero">{{ hero }}</label>
       </div>
     </div>
     <!-- <div>{{ checkedheros }}</div> -->

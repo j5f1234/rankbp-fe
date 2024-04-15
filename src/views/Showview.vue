@@ -9,12 +9,17 @@ function moveToChange() {
   router.push("/change");
 }
 
+function moveToBP() {
+  router.push("/BP");
+}
+
 useHerosBaseData()
 </script>
 
 <template>
   <div class="header">
     <el-button @click="moveToChange()" type="primary" class="change-button">修改</el-button>
+    <el-button @click="moveToBP()" type="primary" class="change-button">去BP</el-button>
   </div>
   <FivePosiShow></FivePosiShow>
 </template>
@@ -24,6 +29,8 @@ useHerosBaseData()
   margin-top:20px;
   width: 100%;
   height: 40px;
+  display: flex;
+  flex-direction: row;
 }
 
 .change-button {
